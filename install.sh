@@ -9,7 +9,6 @@ git submodule foreach git checkout master
 git submodule foreach git pull --rebase origin master
 
 cd ..
-git clone https://github.com/belledon/blender_fix.git
 rm blender/build_files/build_environment/install_deps.sh
 cp blender_fix/install_deps.sh blender/build_files/build_environment/
 ./install_deps.sh --source=/blender-git/
