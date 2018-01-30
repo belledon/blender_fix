@@ -1,12 +1,12 @@
 #!/bin/sh
 
 echo "Pulling blender..."
-mkdir /blender-git 
-cd /blender-git 
-git clone https://git.blender.org/blender.git 
-cd blender 
-git submodule update --init --recursive 
-git submodule foreach git checkout master 
+mkdir /blender-git
+cd /blender-git
+git clone https://git.blender.org/blender.git
+cd blender
+git submodule update --init --recursive
+git submodule foreach git checkout master
 git submodule foreach git pull --rebase origin master
 
 echo "Installing dependencies"
@@ -25,5 +25,7 @@ cmake blender \
     -DWITH_PLAYER=OFF \
     -DWITH_PYTHON_MODULE=ON \
     -DPYTHON_SITE_PACKAGES=/usr/lib/python3/dist-packages
+    -DPYTHON_LIBRARY=/usr/bin/python3.5m
+    -DPYTHON_INCLUDE_DIR=/usr/include/python3.5m
 make
 make install
