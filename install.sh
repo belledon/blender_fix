@@ -17,6 +17,7 @@ echo "Y" | blender/build_files/build_environment/install_deps.sh --source=/blend
 
 echo "Building Blender..."
 cd /blender-git/
+PPATH="$(which python3)"
 cmake blender \
     -DCMAKE_INSTALL_PREFIX=/usr/lib/python3/dist-packages \
     -DWITH_INSTALL_PORTABLE=OFF \
@@ -25,7 +26,7 @@ cmake blender \
     -DWITH_PLAYER=OFF \
     -DWITH_PYTHON_MODULE=ON \
     -DPYTHON_SITE_PACKAGES=/usr/lib/python3/dist-packages
-    -DPYTHON_LIBRARY=/usr/bin/python3.5
+    -DPYTHON_LIBRARY=$PPATH
     -DPYTHON_INCLUDE_DIR=/usr/include/python3.5
 make
 make install
