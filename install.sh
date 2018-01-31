@@ -26,6 +26,6 @@ cmake blender \
     -DWITH_PLAYER=OFF \
     -DWITH_PYTHON_MODULE=ON \
     -DPYTHON_SITE_PACKAGES=/usr/lib/python3/dist-packages \
-    -DPYTHON_VERSION=3.5
+    -DPYTHON_VERSION=3.6
 make -j 4
 make install
