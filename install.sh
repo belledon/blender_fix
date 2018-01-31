@@ -28,5 +28,5 @@ cmake blender \
     -DPYTHON_SITE_PACKAGES=/usr/lib/python3/dist-packages
     -DPYTHON_LIBRARY=$PPATH
     -DPYTHON_INCLUDE_DIR=/usr/include/python3.5
-make
+make -j 4
 make install
