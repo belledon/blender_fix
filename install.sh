@@ -1,14 +1,14 @@
 #!/bin/sh
 
+VERSION="2.79"
+
 echo "Pulling blender..."
 mkdir /blender-git
 cd /blender-git
-git clone https://git.blender.org/blender.git
-cd blender
-git checkout 8ef39d5c882896bd75e0d4d17fb3e3d4710fc768 # Blender 2.79
-git submodule update --init --recursive
-git submodule foreach git checkout master
-git submodule foreach git pull --rebase origin master
+wget "http://download.blender.org/source/blender-${VERSION}.tar.gz"
+tar -xzf "blender-${VERSION}.tar.gz"
+rm "blender-${VERSION}.tar.gz"
+mv "blender-${VERSION}" blender
 
 echo "Installing dependencies"
 cd /blender-git
