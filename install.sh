@@ -27,7 +27,7 @@ cmake blender \
     -DWITH_PYTHON_INSTALL=OFF \
     -DWITH_PLAYER=OFF \
     -DWITH_PYTHON_MODULE=ON \
-    -DPYTHON_SITE_PACKAGES=/usr/lib/python3/dist-packages \
+    -DPYTHON_SITE_PACKAGES=/usr/lib/python3/dist-packages
 CORES="$(getconf _NPROCESSORS_ONLN)"
 make -j $CORES
 make install
